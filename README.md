@@ -16,6 +16,7 @@ The analysis separates:
 ```text
 moveinsync-fde-case-study/
 ├── README.md
+|–– MoveInSync_case_study_PPT.pptx
 ├── report/
 │   └── MoveInSync_FDE_Case_Study_Final_Updated.pdf
 ├── evidence/
