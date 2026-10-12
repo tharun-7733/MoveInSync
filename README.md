@@ -1,107 +1,107 @@
-# MoveInSync FDE Case Study — Review Rating Diagnosis
+# MoveInSync FDE Case Study
 
-This repository contains the case-study report and a reproducible public-review analysis workflow for investigating the employee experience in the MoveInSync app.
+**Objective:** Investigate employee experiences reported in MoveInSync's public Play Store reviews, identify issues worth validating, and recommend a measurable plan for improving reliability and satisfaction.
 
-## Case-study objective
+This repository includes the case-study report, presentation, collected review evidence, source log, charts, and supporting documentation.
 
-Understand the current Play Store rating context, identify recurring problems reported in public reviews, recommend which issues to investigate first, and define how Product, Engineering, Support, and Operations can validate fixes.
+## Start here
 
-The analysis separates:
-- **Listing-level context:** the Play Store's displayed rating and total ratings, when successfully retrieved.
-- **Collected review sample:** records actually returned by the public review collector.
-- **Root-cause hypotheses:** potential explanations that require validation against authorized internal data.
+- **[Case-study report (PDF)](report/MoveInSync_FDE_Case_Study_Tharun_Teja_Polished.pdf)**
+- **[Case-study presentation (PPTX)](MoveInSync_case_study_PPT.pptx)**
+- [Collected public reviews (CSV)](evidence/MoveInSync_Public_Reviews_Combined.csv)
+- [Public source log (CSV)](evidence/Public_Web_Source_Log.csv)
+- [Manual review audit template (CSV)](evidence/Manual_Review_Audit_Template.csv)
+- [Data documentation](data/README.md)
+
+## What this analysis covers
+
+The workflow separates three kinds of evidence:
+
+- **Listing-level context:** rating and total-review figures visible on the Play Store listing at a specific time.
+- **Collected sample:** reviews actually returned by the scraper.
+- **Root-cause hypotheses:** possible explanations that require validation with authorized internal product and operations data.
 
 ## Repository structure
 
 ```text
-moveinsync-fde-case-study/
+.
 ├── README.md
-|–– MoveInSync_case_study_PPT.pptx
+├── MoveInSync_case_study_PPT.pptx
 ├── report/
-│   └── MoveInSync_FDE_Case_Study_Final_Updated.pdf
+│   └── MoveInSync_FDE_Case_Study_Tharun_Teja_Polished.pdf
 ├── evidence/
-│   └── Public_Web_Source_Log.csv
-├── notebooks/
-│   └── MoveInSync_Review_Collection_and_Analysis.ipynb
+│   ├── MoveInSync_Public_Reviews_Combined.csv
+│   ├── Public_Web_Source_Log.csv
+│   ├── Manual_Review_Audit_Template.csv
+│   └── low_star_theme_by_month.csv
 ├── figures/
+│   ├── barplot.png
+│   ├── graph_analysis.png
 │   ├── low_star_theme_counts.png
 │   └── monthly_review_counts_sample.png
-└── data/
-    ├── README.md
-    ├── MoveInSync_Public_Reviews_Combined.csv
-    ├── collection_metadata.json
-    ├── Findings_Summary.json
-    ├── low_star_theme_by_month.csv
-    └── Manual_Review_Audit_Template.csv
+├── data/
+│   └── README.md
+└── notebook/
+    └── (analysis notebook to be added, if available)
 ```
 
-Adjust filenames and folders to match the files actually committed. Do not include generated files that have not been checked.
+**Note:** The current `notebook/` directory does not contain an analysis notebook. The files in this repository therefore document the workflow and evidence, but a reviewer cannot rerun the complete analysis from a notebook yet.
 
-## Recorded sample
+## Collected sample
 
-The saved collection metadata records:
-- 1,000 unique review records.
-- 640 five-star, 259 one-star, 42 four-star, 33 two-star, and 26 three-star reviews.
-- 292 one- or two-star reviews in this sample.
-- Collection run: 11 October 2026 (UTC).
+The saved review CSV contains 1,000 unique review records from a collection run on **11 October 2026 (UTC)**.
 
-These figures describe this specific recent accessible-review sample only. They are not estimates of all MoveInSync employees, all trips, or all historical reviews.
+| Rating | Reviews | Share of sample |
+|---|---:|---:|
+| 5 stars | 640 | 64.0% |
+| 4 stars | 42 | 4.2% |
+| 3 stars | 26 | 2.6% |
+| 2 stars | 33 | 3.3% |
+| 1 star | 259 | 25.9% |
+| **Total** | **1,000** | **100%** |
 
-**Important collection limitation:** the additional targeted one-star and two-star requests failed because the notebook used an unsupported argument name (`filter_score`). The installed package's error suggested `filter_score_with`. Therefore, the 292 low-star reviews came from the all-rating sample; the additional targeted low-star sample was not collected in that run.
+There are **292 one- or two-star reviews** in this collected sample. These came from the all-rating collection. The separate targeted requests for additional one- and two-star reviews failed because the scraper call used an unsupported parameter (`filter_score`; the error indicated `filter_score_with`). Do not describe the targeted low-star collection as successful.
 
-The saved listing metadata did not contain the displayed Play Store score, total ratings, or update date. Verify those values from the listing or rerun the listing query successfully before stating them as current facts.
+The source log records a Play Store listing snapshot showing **4.6 stars and 1.15 lakh reviews on 11 October 2026**. Treat this as a dated snapshot, not a live rating. The saved listing metadata did not independently capture those listing-level values.
 
 ## Methodology
 
-1. Query public Google Play listing metadata for package `com.moveinsync.ets`, using the India storefront and English locale.
-2. Request up to 1,000 newest accessible reviews across all star ratings.
-3. Attempt additional one-star and two-star retrieval for focused diagnosis.
-4. Normalize review dates and ratings, deduplicate by review ID (with a fallback fingerprint), and export the combined CSV.
-5. Apply transparent keyword-based, multi-label theme rules.
-6. Generate rating distribution, low-star theme and monthly-count charts.
-7. Fetch selected public MoveInSync Help Center pages and save the URL, retrieval status and text excerpt.
-8. Export a manual-audit template so a human can check automated theme labels.
+1. Retrieve public Play Store listing context and accessible reviews for package `com.moveinsync.ets`, using the India storefront and English locale.
+2. Request up to 1,000 newest accessible reviews across all ratings.
+3. Normalize review dates and ratings and deduplicate collected records.
+4. Apply keyword-based, multi-label theme tags.
+5. Generate rating, theme and monthly summary charts.
+6. Save the URLs and retrieval details for selected public sources.
+7. Provide a manual-audit template for checking whether assigned themes match the text.
 
-The notebook uses the third-party `google-play-scraper` package, not an official Google Play reviews API. Access and package behaviour can change. The collected sample is a convenience sample of accessible recent reviews, not a representative probability sample of all historical reviews.
+The collection used the third-party `google-play-scraper` package, not an official Google Play reviews API. Package behavior and public access may change.
 
-## Main signals and interpretation
+## Findings: signals, not proven causes
 
-The rule-based theme chart shows `other_unclear` as the largest category, followed by driver/vehicle operations and booking/scheduling. Crash/performance/network and GPS/ETA also appear in the sample.
+The rule-based theme summaries show `other_unclear` as the largest category, followed by driver/vehicle operations and booking/scheduling. Crash/performance/network and GPS/ETA themes also appear.
 
-These are **investigation leads, not confirmed root causes**. The large `other_unclear` category should be manually reviewed and the taxonomy refined. Theme counts are multi-label, so a single review can count toward more than one theme.
+These categories are **investigation leads, not confirmed root causes**. A review can receive multiple theme labels, and keyword rules can misclassify text. The large `other_unclear` category makes manual review and refinement of the theme taxonomy important.
 
-Monthly counts are affected by source coverage and the collection window. October 2026 is incomplete in the recorded data. Counts are not normalized by trip volume, active users or total reviews and should not be interpreted as evidence that service quality rose or fell in a particular month.
-
-## How to run
-
-1. Open `notebooks/MoveInSync_Review_Collection_and_Analysis.ipynb` in [Google Colab](https://colab.research.google.com/).
-2. Choose **Runtime → Run all**.
-3. Review the listing snapshot, collection logs and source log.
-4. Check the actual CSV row count, rating values, date range, duplicates and source URLs.
-5. Manually audit a sample of theme labels before using findings in the report.
-6. Regenerate charts and report values from the current run.
-
-Before rerunning, fix the targeted rating filter to use the parameter supported by the installed `google-play-scraper` version (the recorded error suggested `filter_score_with`). Test that section and confirm returned star ratings before treating the targeted sample as successful.
+Monthly counts are not normalized by trip volume, active users or total reviews. October 2026 is incomplete in the recorded data, so the charts should not be interpreted as definitive changes in service quality over time.
 
 ## Recommended next steps
 
-1. Verify the current listing-level rating and total ratings count.
-2. Audit 50–100 reviews across ratings, dates and theme labels.
-3. Discuss reported cases with Product, Support and Operations.
-4. Validate hypotheses against authorized booking-state events, GPS/ETA timestamps, notification logs, support cases and no-show dispute outcomes.
-5. Prioritize confirmed high-impact issues; do not rank solely by raw review-theme count.
-6. Define baselines and owners for booking mismatch, stale location, ETA error, notification latency, substantiated false no-show rate, crash-free sessions and support contacts.
-7. Ship a focused fix with acceptance tests and a safe rollout, then compare results with the baseline.
+1. **Verify the baseline.** Recheck the listing rating and total ratings and record the date of the snapshot.
+2. **Audit review labels.** Manually inspect a balanced sample across ratings, dates and predicted themes; refine the rules where needed.
+3. **Validate reported cases.** Work with Product, Support and Operations to compare complaints with authorized booking-state events, GPS/ETA timestamps, notification logs, crash data and no-show dispute outcomes.
+4. **Prioritize confirmed problems.** Rank by impact, frequency and confidence, not raw theme counts alone.
+5. **Ship and measure a focused fix.** Define an owner, acceptance tests, rollout guardrails and rollback criteria, then compare with a documented baseline.
+
+Candidate metrics include booking mismatch rate, stale-location incidence, ETA error, notification latency, substantiated false no-show rate, crash-free sessions and support-contact rate. Select metrics that match the problem confirmed during validation.
 
 ## Limitations and responsible use
 
 - Public reviews are self-selected and may not represent the overall user population.
-- Keyword tags can be inaccurate and must be manually checked.
-- Public reviews and Help Center pages cannot establish internal root causes.
-- Review counts are not normalized by trips or active users.
-- Do not claim the additional low-star collection succeeded in the recorded run.
-- Do not claim the listing score was captured in the recorded metadata.
-- Keep reviewer information to the minimum necessary; do not commit unnecessary personal details, credentials or data you are not authorized to share.
-- Check applicable platform terms and organizational requirements before collecting or republishing public content.
+- A reviewer report does not prove the underlying technical cause.
+- Keyword theme classifications need human validation.
+- Monthly counts are not complaint rates without an appropriate denominator.
+- The targeted additional low-star collection failed in the recorded run.
+- The listing rating and review total are dated source-log observations, not live values.
+- Keep reviewer information to the minimum needed, avoid committing unnecessary personal details or credentials, and check applicable platform terms before collecting or republishing public content.
 
-The goal is a repeatable feedback-to-action process—not a promise of a rating increase without validated evidence.
+**Goal:** establish a repeatable feedback-to-action process—not promise a rating increase without validated evidence.
