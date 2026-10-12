@@ -1,0 +1,58 @@
+{
+  "run_started_utc": "2026-10-11T14:51:32.512115+00:00",
+  "run_finished_utc": "2026-10-11T14:54:31.692370+00:00",
+  "app_id": "com.moveinsync.ets",
+  "country": "in",
+  "language": "en",
+  "listing_status": null,
+  "all_rating_collection_log": {
+    "label": "All-rating recent sample",
+    "score_filter": null,
+    "target": 1000,
+    "max_pages": 5,
+    "pages_attempted": 5,
+    "pages_succeeded": 5,
+    "errors": [],
+    "records_returned_before_dedup": 1000
+  },
+  "low_star_collection_logs": [
+    {
+      "label": "1-star diagnostic",
+      "score_filter": 1,
+      "target": 150,
+      "max_pages": 3,
+      "pages_attempted": 1,
+      "pages_succeeded": 0,
+      "errors": [
+        "TypeError(\"reviews() got an unexpected keyword argument 'filter_score'. Did you mean 'filter_score_with'?\")"
+      ],
+      "records_returned_before_dedup": 0
+    },
+    {
+      "label": "2-star diagnostic",
+      "score_filter": 2,
+      "target": 150,
+      "max_pages": 3,
+      "pages_attempted": 1,
+      "pages_succeeded": 0,
+      "errors": [
+        "TypeError(\"reviews() got an unexpected keyword argument 'filter_score'. Did you mean 'filter_score_with'?\")"
+      ],
+      "records_returned_before_dedup": 0
+    }
+  ],
+  "unique_review_count": 1000,
+  "sample_rating_counts": {
+    "5": 640,
+    "1": 259,
+    "4": 42,
+    "2": 33,
+    "3": 26
+  },
+  "limitations": [
+    "Recent accessible reviews form a convenience sample, not a representative historical sample.",
+    "Rule-based theme tags require manual validation.",
+    "Monthly review counts are not normalized by trips or active users.",
+    "Public pages cannot verify internal root causes."
+  ]
+}
