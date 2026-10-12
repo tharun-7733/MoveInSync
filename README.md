@@ -2,7 +2,7 @@
 
 **Objective:** Diagnose public employee-app feedback, identify issues to validate, and recommend a measurable reliability-first plan.
 
-> **Evidence-status note (12 October 2026):** The source log contains a Play Store listing snapshot of **4.6 stars and 1.15 lakh reviews captured on 11 October 2026 at 14:52:18 UTC**. This is a dated snapshot, not a live rating. The earlier 4.3/5 figure from 10 October conflicts with this source-log snapshot. Corrected local deliverables now use the timestamped 4.6-star baseline; the repository PDF/PPT binaries have not yet been replaced. Download the corrected files from the current ChatGPT conversation, then replace the repository versions before submitting.
+> **Evidence-status note (12 October 2026):** The source log contains a Play Store listing snapshot of **4.6 stars and 1.15 lakh reviews captured on 11 October 2026 at 14:52:18 UTC**. This is a dated snapshot, not a live rating. The earlier 4.6/5 figure from 10 October conflicts with this source-log snapshot. Corrected local deliverables now use the timestamped 4.6-star baseline; the repository PDF/PPT binaries have not yet been replaced. Download the corrected files from the current ChatGPT conversation, then replace the repository versions before submitting.
 
 ## Start here
 
