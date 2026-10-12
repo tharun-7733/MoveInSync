@@ -2,15 +2,18 @@
 
 **Objective:** Investigate employee experiences reported in MoveInSync's public Play Store reviews, identify issues worth validating, and recommend a measurable plan for improving reliability and satisfaction.
 
-This repository includes the case-study report, presentation, collected review evidence, source log, charts, and supporting documentation.
+This repository contains the case-study report, presentation, review evidence, collection metadata, source log, charts, and analysis notebook.
 
 ## Start here
 
-- **[Case-study report (PDF)](report/MoveInSync_FDE_Case_Study_Tharun_Teja_Polished.pdf)**
+- **[Case-study report (PDF)](report/MoveInSync_Case_Study.pdf)**
 - **[Case-study presentation (PPTX)](MoveInSync_case_study_PPT.pptx)**
+- [Review collection and EDA notebook](notebook/Data_Collection_and_EDA.ipynb)
 - [Collected public reviews (CSV)](evidence/MoveInSync_Public_Reviews_Combined.csv)
 - [Public source log (CSV)](evidence/Public_Web_Source_Log.csv)
 - [Manual review audit template (CSV)](evidence/Manual_Review_Audit_Template.csv)
+- [Collection metadata (JSON)](data/collection_metadata.json)
+- [Findings summary (JSON)](data/Findings_Summary.json)
 - [Data documentation](data/README.md)
 
 ## What this analysis covers
@@ -28,28 +31,28 @@ The workflow separates three kinds of evidence:
 ├── README.md
 ├── MoveInSync_case_study_PPT.pptx
 ├── report/
-│   └── MoveInSync_FDE_Case_Study_Tharun_Teja_Polished.pdf
+│   └── MoveInSync_Case_Study.pdf
+├── notebook/
+│   └── Data_Collection_and_EDA.ipynb
 ├── evidence/
 │   ├── MoveInSync_Public_Reviews_Combined.csv
 │   ├── Public_Web_Source_Log.csv
 │   ├── Manual_Review_Audit_Template.csv
 │   └── low_star_theme_by_month.csv
-├── figures/
-│   ├── barplot.png
-│   ├── graph_analysis.png
-│   ├── low_star_theme_counts.png
-│   └── monthly_review_counts_sample.png
 ├── data/
-│   └── README.md
-└── notebook/
-    └── (analysis notebook to be added, if available)
+│   ├── README.md
+│   ├── collection_metadata.json
+│   └── Findings_Summary.json
+└── figures/
+    ├── barplot.png
+    ├── graph_analysis.png
+    ├── low_star_theme_counts.png
+    └── monthly_review_counts_sample.png
 ```
-
-**Note:** The current `notebook/` directory does not contain an analysis notebook. The files in this repository therefore document the workflow and evidence, but a reviewer cannot rerun the complete analysis from a notebook yet.
 
 ## Collected sample
 
-The saved review CSV contains 1,000 unique review records from a collection run on **11 October 2026 (UTC)**.
+The saved review CSV contains **1,000 unique review records** from a collection run on **11 October 2026 (UTC)**.
 
 | Rating | Reviews | Share of sample |
 |---|---:|---:|
@@ -74,7 +77,7 @@ The source log records a Play Store listing snapshot showing **4.6 stars and 1.1
 6. Save the URLs and retrieval details for selected public sources.
 7. Provide a manual-audit template for checking whether assigned themes match the text.
 
-The collection used the third-party `google-play-scraper` package, not an official Google Play reviews API. Package behavior and public access may change.
+The collection used the third-party `google-play-scraper` package, not an official Google Play reviews API. Package behavior and public access may change. To reproduce the work, open the linked notebook, inspect its collection limitations, and run the steps after verifying the scraper parameters for the installed package version.
 
 ## Findings: signals, not proven causes
 
