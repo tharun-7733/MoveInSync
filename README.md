@@ -2,7 +2,7 @@
 
 **Objective:** Diagnose public employee-app feedback, identify issues to validate, and recommend a measurable reliability-first plan.
 
-> **Evidence-status note (12 October 2026):** The source log contains a Play Store listing snapshot of **4.6 stars and 1.15 lakh reviews captured on 11 October 2026 at 14:52:18 UTC**. This is a dated snapshot, not a live rating. The earlier 4.3/5 figure from 10 October conflicts with this source-log snapshot. The PDF/PPT binaries have not yet been revised; use the timestamped source-log value (4.6 stars, captured 11 October 2026 at 14:52:18 UTC) and update both deliverables before submission.
+> **Evidence-status note (12 October 2026):** The source log contains a Play Store listing snapshot of **4.6 stars and 1.15 lakh reviews captured on 11 October 2026 at 14:52:18 UTC**. This is a dated snapshot, not a live rating. The earlier 4.3/5 figure from 10 October conflicts with this source-log snapshot. Corrected local deliverables now use the timestamped 4.6-star baseline; the repository PDF/PPT binaries have not yet been replaced. Download the corrected files from the current ChatGPT conversation, then replace the repository versions before submitting.
 
 ## Start here
 
@@ -49,7 +49,7 @@ This is not an official Google Play API integration. Package behavior and public
 
 Rule-based theme labels suggest investigation areas including driver/vehicle operations, booking/scheduling, crash/performance/network and GPS/ETA. The `other_unclear` label is large and signals the need for manual audit. Public review text cannot establish prevalence, technical cause or contribution to the overall Play Store score.
 
-**Monthly theme table regenerated:** `evidence/low_star_theme_by_month.csv` now contains 50 month × theme rows for June–October 2026, computed from the 292 one- or two-star records in the saved review CSV using the existing rule-based multi-label tags. Counts are review-theme assignments, so one review can contribute to multiple themes. October is partial. The CSV now contains counts, but the monthly theme chart has not yet been regenerated and verified. Do not use the old chart as validated evidence; regenerate it from this CSV or remove it from both deliverables until checked. Monthly review counts are not complaint rates without denominators such as trips or active users.
+**Monthly theme table regenerated:** `evidence/low_star_theme_by_month.csv` now contains 50 month × theme rows for June–October 2026, computed from the 292 one- or two-star records in the saved review CSV using the existing rule-based multi-label tags. Counts are review-theme assignments, so one review can contribute to multiple themes. October is partial. The monthly theme chart has now been regenerated from the corrected month × theme CSV and visually checked in the corrected local PDF/PPT files. The repository PDF/PPT binaries still need to be replaced with those corrected versions. October is partial; counts are multi-label assignments, not incident rates or causal evidence. Monthly review counts are not complaint rates without denominators such as trips or active users.
 
 ## Recommended next steps
 
