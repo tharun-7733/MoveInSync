@@ -1,17 +1,17 @@
 {
   "listing_context": {
-    "displayed_score": null,
-    "total_ratings": null,
-    "updated": null,
-    "status": null
+    "displayed_score": 4.638746,
+    "total_ratings": 114879,
+    "updated": 1791478100,
+    "status": "success"
   },
-  "unique_sample_count": 1000,
-  "low_star_sample_count": 292,
+  "unique_sample_count": 1167,
+  "low_star_sample_count": 458,
   "sample_rating_counts": {
-    "5": 640,
-    "1": 259,
+    "5": 641,
+    "1": 258,
+    "2": 200,
     "4": 42,
-    "2": 33,
     "3": 26
   },
   "interpretation": "Sample findings are diagnostic signals, not estimates of all user or trip experiences."

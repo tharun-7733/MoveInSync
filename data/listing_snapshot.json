@@ -1,0 +1,26 @@
+{
+  "app_id": "com.moveinsync.ets",
+  "country": "in",
+  "language": "en",
+  "source_url": "https://play.google.com/store/apps/details?id=com.moveinsync.ets&hl=en_IN&gl=IN",
+  "collected_at_utc": "2026-10-12T10:53:39.307373+00:00",
+  "title": "MoveInSync",
+  "score": 4.638746,
+  "ratings": 114879,
+  "reviews": 23621,
+  "installs": "1,000,000+",
+  "minInstalls": 1000000,
+  "updated": 1791478100,
+  "version": "12.19.0",
+  "released": "Mar 8, 2014",
+  "genre": "Maps & Navigation",
+  "url": "https://play.google.com/store/apps/details?id=com.moveinsync.ets&hl=en&gl=in",
+  "histogram": [
+    7317,
+    840,
+    1224,
+    7255,
+    98238
+  ],
+  "status": "success"
+}
