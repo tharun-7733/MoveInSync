@@ -4,7 +4,7 @@ Updated: 12 October 2026
 
 ## Rating baseline
 
-The source log, `evidence/Public_Web_Source_Log.csv`, records the Play Store page fetch at **2026-10-11 14:52:18.944 UTC**, HTTP 200, with excerpt **4.6 stars / 1.15L reviews**. This is a dated snapshot, not a live value. The report's earlier 4.3/5 figure dated 10 October conflicts with that source-log observation and has not been independently reconciled. The README now uses the timestamped 11 October observation and explicitly flags the report/PPT mismatch. The PDF and PPT binary headlines still require revision before submission; do not present the 4.3 figure as a reconciled baseline.
+The source log, `evidence/Public_Web_Source_Log.csv`, records the Play Store page fetch at **2026-10-11 14:52:18.944 UTC**, HTTP 200, with excerpt **4.6 stars / 1.15L reviews**. This is a dated snapshot, not a live value. The report's earlier 4.3/5 figure dated 10 October conflicted with the source-log observation. Corrected local deliverables now use the dated 4.6-star baseline and timestamp; the original repository PDF/PPT binary files still need to be replaced with the corrected local files before submission.
 
 ## Failed targeted low-star collection
 
