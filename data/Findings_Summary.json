@@ -1,0 +1,18 @@
+{
+  "listing_context": {
+    "displayed_score": null,
+    "total_ratings": null,
+    "updated": null,
+    "status": null
+  },
+  "unique_sample_count": 1000,
+  "low_star_sample_count": 292,
+  "sample_rating_counts": {
+    "5": 640,
+    "1": 259,
+    "4": 42,
+    "2": 33,
+    "3": 26
+  },
+  "interpretation": "Sample findings are diagnostic signals, not estimates of all user or trip experiences."
+}
