@@ -49,7 +49,7 @@ This is not an official Google Play API integration. Package behavior and public
 
 Rule-based theme labels suggest investigation areas including driver/vehicle operations, booking/scheduling, crash/performance/network and GPS/ETA. The `other_unclear` label is large and signals the need for manual audit. Public review text cannot establish prevalence, technical cause or contribution to the overall Play Store score.
 
-**Monthly theme analysis is currently unavailable as a verified artifact.** The committed `evidence/low_star_theme_by_month.csv` contained only a month header/list and no theme-count columns or values. Therefore it did not substantiate a monthly-theme chart. Do not use that CSV to support conclusions; regenerate the aggregation from the review-level CSV and rebuild the corresponding chart before presenting it as evidence. Monthly review counts are not complaint rates without denominators such as trips or active users.
+**Monthly theme table regenerated:** `evidence/low_star_theme_by_month.csv` now contains 50 month × theme rows for June–October 2026, computed from the 292 one- or two-star records in the saved review CSV using the existing rule-based multi-label tags. Counts are review-theme assignments, so one review can contribute to multiple themes. October is partial. The existing monthly-theme chart has not yet been regenerated/visually checked against this corrected table; do not treat the old chart as validated. Monthly review counts are not complaint rates without denominators such as trips or active users.
 
 ## Recommended next steps
 
